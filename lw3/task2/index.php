@@ -10,13 +10,13 @@ function checkIdentifier(string $str) : string
 	$non_word_char = preg_match("/\W|\_/", $str, $matches);
 	if ($digit_first)
 	{
-		$message = PHP_EOL."Identifier couldn't begin with digit. ";
+		$message = "Identifier couldn't begin with digit. ";
 	}
 	if ($non_word_char)
 	{
-		$message .= PHP_EOL."Identifier can contain letters and numbers only.";	
+		$message .= "Identifier can contain letters and numbers only.";	
 	}
-	$result = isset($message) ? "no".$message : "yes";
+	$result = isset($message) ? "no".PHP_EOL.$message : "yes";
 	return $result;
 }
 
