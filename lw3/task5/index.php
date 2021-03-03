@@ -1,40 +1,4 @@
 <?php
-function getGETParameter(string $name) : ?string
-{
-	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
-}
-
-function isEmail(string $str) : bool
-{
-	$pattern_email = "/^\w+\@\w+\.\w+$/";
-
-	return preg_match($pattern_email, $str);
-}
-
-function printSurveyInfo(array $fields) : void
-{
-	echo "First Name: ".$fields[0].PHP_EOL;
-	echo "Last Name: ".$fields[1].PHP_EOL;
-	echo "Email: ".$fields[2].PHP_EOL;
-	echo "Age: ".$fields[3];	
-}
-
-function getSurveyInfo(string $email) : void
-{
-	$filename = "D:/Curses/Web/web-development/lw3/data/".$email.".txt";
-
-	if (($fp = fopen($filename, "r")) !== false) 
-	{
-		$form = fgetcsv($fp, ",");
-		printSurveyInfo($form);
-		fclose($fp); 	
-	}
-	else
-	{
-		echo "The file \"".$email.".txt\" couldn't be opened.".PHP_EOL;
-	}
-}
-
 header("Content-Type: text/plain");
 
 $param = "email";
@@ -43,12 +7,40 @@ $text = getGETParameter($param);
 if ($text === null)
 {
 	echo "Parameter \"$param\" isn't found";
+    return;
 }
-elseif (($text === "") || !isEmail($text))
+
+if (($text === "") || !isEmail($text))
 {
 	echo "Enter valid email";
 }
 else
 {
 	getSurveyInfo($text);
+}
+
+function getGETParameter(string $name): ?string
+{
+	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
+}
+
+function isEmail(string $str) : bool
+{
+	$patternEmail = "/^\w+\@\w+\.\w+$/";
+
+	return preg_match($patternEmail, $str);
+}
+
+function getSurveyInfo(string $email): void
+{
+	$filename = "D:/Curses/Web/web-development/lw3/data/$email.txt";
+
+	if (file_exists($filename)) 
+	{
+		echo file_get_contents($filename); 	
+	}
+	else
+	{
+		echo "The file \"".$email.".txt\" couldn't be opened.".PHP_EOL;
+	}
 }
