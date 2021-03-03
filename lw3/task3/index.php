@@ -1,5 +1,6 @@
 <?php
-function getGETParameter(string $name): ?string
+
+function getGETParameter(string $name) : ?string
 {
 	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
 }
@@ -31,18 +32,18 @@ function checkPasswordStrength(string $str) : int
 		$repeats += ($val > 1) ? $val : 0;
    		
 	}
-	$strength = ($uppercase) ? 2*($len - $uppercase) : 0;
-	$strength += ($lowercase) ? 2*($len - $lowercase) : 0;
-	$strength += (($digits > 0) xor (($uppercase + $lowercase) > 0)) ? -$len : 0;
-	$strength += 4*$len + 4*$digits - $repeats;
+	$strength = ($uppercase) ? 2 * ($len - $uppercase) : 0;
+	$strength += ($lowercase) ? 2 * ($len - $lowercase) : 0;
+	$strength += (($digits > 0) ^ (($uppercase + $lowercase) > 0)) ? -$len : 0;
+	$strength += 4 * $len + 4 * $digits - $repeats;
 
 	return $strength;
 }
 
+header("Content-Type: text/plain");
+
 $param = "password";
 $text = getGETParameter($param);
-
-header("Content-Type: text/plain");
 
 if ($text === null)
 {

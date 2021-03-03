@@ -1,5 +1,5 @@
 <?php
-function getGETParameter(string $name): ?string
+function getGETParameter(string $name) : ?string
 {
 	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
 }
@@ -14,16 +14,16 @@ function checkIdentifier(string $str) : string
 	}
 	if ($non_word_char)
 	{
-		$message .= "Identifier can contain letters and numbers only.";	
+		$message .= "Identifier can contain latin letters and numbers only.";	
 	}
 	$result = isset($message) ? "no".PHP_EOL.$message : "yes";
 	return $result;
 }
 
+header("Content-Type: text/plain");
+
 $param = "identifier";
 $text = getGETParameter($param);
-
-header("Content-Type: text/plain");
 
 if ($text === null)
 {

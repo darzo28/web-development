@@ -1,5 +1,5 @@
 <?php
-function getGETParameter(string $name): ?string
+function getGETParameter(string $name) : ?string
 {
 	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
 }
@@ -11,10 +11,10 @@ function removeExtraBlanks(string $str) : string
 	return $result;
 }
 
+header("Content-Type: text/plain");
+
 $param = "text";
 $text = getGETParameter($param);
-
-header("Content-Type: text/plain");
 
 if ($text !== null)
 {

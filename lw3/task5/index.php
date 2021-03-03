@@ -1,5 +1,5 @@
 <?php
-function getGETParameter(string $name): ?string
+function getGETParameter(string $name) : ?string
 {
 	return isset($_GET[$name]) ? (string)$_GET[$name] : null;
 }
@@ -35,10 +35,10 @@ function getSurveyInfo(string $email) : void
 	}
 }
 
+header("Content-Type: text/plain");
+
 $param = "email";
 $text = getGETParameter($param);	
-
-header("Content-Type: text/plain");
 
 if ($text === null)
 {
