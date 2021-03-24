@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.page
+{
+    background: #fff;
+    font: 19px Georgia, Arial, sans-serif;
+    width: 1000px;
+    height: 1171px;
+    margin: 100px 460px 0;
+    padding: 0 22px 0 20px;
+}
+
+.leftbar
+{
+    width: 330px;
+    height: 1171px;
+    float: left;
+}
+
+.leftbar__substrate
+{
+    background: #132d36;
+    border-radius: 6px;
+    width: 330px;
+    height: 350px;
+    z-index: 1;
+}
+
+.leftbar__image
+{
+    width: 100%;
+    z-index: 2;
+}
+
+.content
+{
+    width: 100%;
+    height: 771px;
+    margin-top: 50px;
+}
+
+.leftbar__block
+{
+    width: 100%;
+    height: 172px;
+    margin-bottom: 57px;
+}
+
+.leftbar__heading
+{
+    font: 600 24px/1 'Open Sans';
+    color: #15a98b;
+    margin: 23px auto;
+}
+
+.leftbar__list
+{
+    margin-left: 20px;
+}
+
+.list__item
+{
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.rightbar
+{
+    width: 570px;
+    height: 1171px;
+    float: left;
+    margin-left: 60px;
+}
+
+.quote
+{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+}
+
+.quote__image
+{
+    position: absolute;
+    z-index: 1;
+}
+
+.quote_content
+{
+    padding-top: 70px;
+    margin-left: 61px;
+    z-index: 2;
+}
+
+.quote__text
+{
+    font: italic 28px/1.5 Georgia;
+    color: #848484;
+    margin-bottom: 12px;
+}
+
+.quote__author
+{
+    font: 600 16px 'Open Sans';
+    color: #333;
+    margin-left: 1px;
+}
+
+.rightbar__block
+{
+    width: 100%;
+    margin-bottom: 52px;
+}
+
+.rightbar__heading
+{
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.rightbar__heading_level-1
+{
+    font: 700 48px/1 'Open Sans';
+}
+
+.rightbar__heading_level-2
+{
+    font: 600 36px/1 'Open Sans';
+}
+
+.rightbar__border
+{
+    background: #45c3aa;
+    border-radius: 3px;
+    width: 60px;
+    height: 6px;
+    margin-bottom: 50px;
+}
+
+.content__text
+{
+    color: #555;
+}
+
+.content__link
+{
+    color: #15a98b;
+}
+
+.content__link:hover
+{
+    color: #098d72;
+}
+
+.content__link::after
+{
+    content: "→";
+}
