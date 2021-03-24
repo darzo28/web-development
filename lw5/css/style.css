@@ -103,6 +103,7 @@
 {
     font: italic 28px/1.5 Georgia;
     color: #848484;
+    width: 470px;
     margin-bottom: 12px;
 }
 
@@ -116,23 +117,25 @@
 .rightbar__block
 {
     width: 100%;
-    margin-bottom: 52px;
+    margin-bottom: 44px;
 }
 
 .rightbar__heading
 {
     color: #333;
-    margin-bottom: 12px;
+    margin-bottom: 37px;
 }
 
 .rightbar__heading_level-1
 {
-    font: 700 48px/1 'Open Sans';
+    font: 700 48px/0.65 'Open Sans';
+    margin-left: 4px;
 }
 
 .rightbar__heading_level-2
 {
     font: 600 36px/1 'Open Sans';
+    margin-bottom: 20px;
 }
 
 .rightbar__border
@@ -141,12 +144,14 @@
     border-radius: 3px;
     width: 60px;
     height: 6px;
-    margin-bottom: 50px;
+    margin-bottom: 43px;
 }
 
 .content__text
 {
     color: #555;
+    line-height: 1.7;
+    width: 570px;
 }
 
 .content__link
@@ -159,7 +164,8 @@
     color: #098d72;
 }
 
-.content__link::after
+.content_arrow
 {
-    content: "→";
+    display: inline;
+    color: #15a98b;
 }
