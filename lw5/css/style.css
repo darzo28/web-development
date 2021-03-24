@@ -159,13 +159,12 @@
     color: #15a98b;
 }
 
-.content__link:hover
+.link
 {
-    color: #098d72;
+    color: #15a98b;
 }
 
-.content_arrow
+.link:hover
 {
-    display: inline;
-    color: #15a98b;
+    color: #098d72;
 }
